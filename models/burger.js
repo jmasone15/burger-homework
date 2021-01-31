@@ -1,4 +1,4 @@
-const orm = require("../config/orm");
+const orm = require("../config/orm.js");
 
 const burger = {
     all(cb) {
@@ -8,7 +8,7 @@ const burger = {
         orm.insertOne('burgers', cols, vals, (res) => cb(res));
     },
     update(objColVals, condition, cb) {
-        orm.update('burgers', objColVals, condition, (res) => cb(res));
+        orm.updateOne('burgers', objColVals, condition, (res) => cb(res));
     }
 };
 

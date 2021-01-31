@@ -63,20 +63,24 @@ const orm = {
             cb(result);
         });
     },
-    updateOne(table, objColsVals, condition, cb) {
+    updateOne(table, objColVals, condition, cb) {
         let queryString = `UPDATE ${table}`;
 
         queryString += ' SET ';
-        queryString += objToSql(objColsVals);
+        queryString += objToSql(objColVals);
         queryString += ' WHERE ';
         queryString += condition;
 
         console.log(queryString);
+        console.log(objColVals);
         connection.query(queryString, (err, result) => {
-            if (err) throw err;
+            if (err) {
+                throw err;
+            }
+
             cb(result);
         });
-    }
+    },
 };
 
 // Export to burger.js model

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 const id = e.target.getAttribute('data-id');
                 const newDevour = e.target.getAttribute('data-newdevour');
                 const newDevourState = {
-                    devour: newDevour,
+                    devoured: newDevour,
                 };
 
                 fetch(`/api/burgers/${id}`, {
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         createBurgerBtn.addEventListener('submit', (e) => {
             e.preventDefault();
             const newBurger = {
-                burger_name: document.getElementById('burg').nodeValue.trim(),
+                burger_name: document.getElementById('burg').value.trim(),
                 devoured: document.getElementById('devoured').checked,
             };
 
