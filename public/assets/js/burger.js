@@ -60,4 +60,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
         });
     }
+
+    // DELETE 
+    const deleteBurgerBtns = document.querySelectorAll(".delete");
+
+    if (deleteBurgerBtns) {
+        deleteBurgerBtns.forEach((button) => {
+            button.addEventListener("click", (e) => {
+                const id = e.target.getAttribute("data-id");
+
+                fetch(`/api/burgers/${id}`, {
+                    method: "DELETE",
+                }).then((response) => {
+                    console.log(`Deleted burger with id: ${id}`);
+                    location.reload("/")
+                });
+            });
+        });
+    }
 });

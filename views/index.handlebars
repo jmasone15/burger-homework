@@ -41,14 +41,14 @@
     <br><br>
 
     <div class="bg-light p-5 rounded">
-        <h1 class="header"><i class="fas fa-hamburger"></i>Burgers!<i class="fas fa-hamburger"></i></h1>
+        <h1 class="main"><i class="fas fa-hamburger"></i>Burgers!<i class="fas fa-hamburger"></i></h1>
         <br><br>
         <form id="create-form">
             <div class="form-group">
                 <input type="text" id="burg" name="burger_name" placeholder="Add a Burger to the list!" required>
             </div>
             <br><br>
-            <button type="submit" class="btn btn-lg btn-danger">Add Burger!</button>
+            <button type="submit" class="btn btn-lg btn-success">Add Burger!</button>
         </form>
 
     </div>
@@ -88,6 +88,16 @@
     </div>
 
     <br><br><br><br>
+
+    <div class="bg-light p-5 rounded">
+        <h1 class="header"><i class="fas fa-hamburger"></i>Delete Burger!<i class="fas fa-hamburger"></i></h1>
+        <br><br>
+        <div class="form-group">
+            {{#each burgers}}
+                <button class="btn btn-lg btn-danger delete" data-id="{{id}}">{{burger_name}}</button>
+            {{/each}}
+        </div>
+    </div>
 
 
 </div>
