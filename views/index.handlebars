@@ -1,4 +1,4 @@
-<h1>Burgers!</h1>
+{{!-- <h1>Burgers!</h1>
 
 <h2>Burgers that haven't been devoured!</h2>
 
@@ -35,4 +35,83 @@
     </div>
 
     <button type="submit">Add Burger</button>
-</form>
+</form> --}}
+
+<div class="container" style="text-align: center;">
+    <!-- {{{ body }}} -->
+    <br><br>
+
+    <h1 class="header">Burgers!</h1>
+
+    <img src="https://i.pinimg.com/originals/01/1d/1d/011d1d429a11a56939f6b4c2831f1061.jpg" alt="burger"
+        style="height: 150px; width: 150px;">
+
+    <br><br>
+
+    <div class="container">
+        <h3 class="header">Add a Burger!</h3>
+        <form id="create-form">
+
+            <div class="form-group">
+                <label for="burg">Burger Name:</label>
+                <input type="text" id="burg" name="burger_name">
+            </div>
+
+            <div class="form-group">
+                <label for="devo">Devoured?</label><br>
+                <input type="radio" name="devoured" value="1" id="devoured" checked> Devoured!<br>
+                <input type="radio" name="devoured" value="0" id="not_devoured"> Not devoured!
+            </div>
+
+            <button type="submit">Add Burger</button>
+        </form>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action list-group-item-dark"
+                        aria-current="true">
+                        Click to Devour!
+                    </button>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <button class="list-group-item list-group-item-action change-devour" data-id="{{id}}"
+                        data-newdevour="{{devoured}}">
+                        <strong>
+                            {{burger_name}}
+                        </strong>
+                    </button>
+                    {{/unless}}
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action list-group-item-dark"
+                        aria-current="true">
+                        Click to Undevour!
+                    </button>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <button class="list-group-item list-group-item-action change-devour" data-id="{{id}}"
+                        data-newdevour="{{devoured}}">
+                        <strong>
+                            {{burger_name}}
+                        </strong>
+                    </button>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br>
+
+
+</div>

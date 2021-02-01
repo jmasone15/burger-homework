@@ -1,5 +1,4 @@
 const express = require("express");
-const connection = require("../config/connection.js")
 const router = express.Router();
 const burger = require("../models/burger.js")
 
@@ -21,9 +20,7 @@ router.post("/api/burgers", (req, res) => {
 
 router.put("/api/burgers/:id", (req, res) => {
     const condition = `id = ${req.params.id}`;
-    const devour = req.body.devoured;
     console.log('condition', condition);
-    console.log(devour);
 
     burger.update(
         {

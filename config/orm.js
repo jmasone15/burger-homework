@@ -72,7 +72,6 @@ const orm = {
         queryString += condition;
 
         console.log(queryString);
-        console.log(objColVals);
         connection.query(queryString, (err, result) => {
             if (err) {
                 throw err;
