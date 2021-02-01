@@ -38,7 +38,6 @@
 </form> --}}
 
 <div class="container" style="text-align: center;">
-    <!-- {{{ body }}} -->
     <br><br>
 
     <h1 class="header">Burgers!</h1>
@@ -49,22 +48,23 @@
     <br><br>
 
     <div class="container">
-        <h3 class="header">Add a Burger!</h3>
-        <form id="create-form">
+        <div class="row align-items-start">
+            <h3 class="header">Add a Burger!</h3>
+            <form id="create-form">
 
-            <div class="form-group">
-                <label for="burg">Burger Name:</label>
-                <input type="text" id="burg" name="burger_name">
-            </div>
+                <div class="form-group">
+                    <input type="text" id="burg" name="burger_name">
+                </div>
 
-            <div class="form-group">
-                <label for="devo">Devoured?</label><br>
-                <input type="radio" name="devoured" value="1" id="devoured" checked> Devoured!<br>
-                <input type="radio" name="devoured" value="0" id="not_devoured"> Not devoured!
-            </div>
+                {{!-- <div class="form-group">
+                    <label for="devo">Devoured?</label><br>
+                    <input type="radio" name="devoured" value="1" id="devoured" checked> Devoured!<br>
+                    <input type="radio" name="devoured" value="0" id="not_devoured"> Not devoured!
+                </div> --}}
 
-            <button type="submit">Add Burger</button>
-        </form>
+                <button type="submit" class="">Add Burger</button>
+            </form>
+        </div>
     </div>
 
     <br><br><br><br>
@@ -79,12 +79,7 @@
                     </button>
                     {{#each burgers}}
                     {{#unless devoured}}
-                    <button class="list-group-item list-group-item-action change-devour" data-id="{{id}}"
-                        data-newdevour="{{devoured}}">
-                        <strong>
-                            {{burger_name}}
-                        </strong>
-                    </button>
+                    {{> burgers/burger-block devour=true}}
                     {{/unless}}
                     {{/each}}
                 </div>
@@ -98,12 +93,7 @@
                     </button>
                     {{#each burgers}}
                     {{#if devoured}}
-                    <button class="list-group-item list-group-item-action change-devour" data-id="{{id}}"
-                        data-newdevour="{{devoured}}">
-                        <strong>
-                            {{burger_name}}
-                        </strong>
-                    </button>
+                    {{> burgers/burger-block devour=false}}
                     {{/if}}
                     {{/each}}
                 </div>

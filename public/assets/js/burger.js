@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             e.preventDefault();
             const newBurger = {
                 burger_name: document.getElementById('burg').value.trim(),
-                devoured: document.getElementById('devoured').checked,
+                devoured: 0,
             };
 
             fetch('/api/burgers', {

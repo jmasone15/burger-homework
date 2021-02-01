@@ -5,3 +5,8 @@ body {
 .header {
     color: whitesmoke;
 }
+
+#create-form {
+    border: dotted white 5px;
+    color: white;
+}
