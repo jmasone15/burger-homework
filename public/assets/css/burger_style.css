@@ -1,12 +1,18 @@
 body {
-    background-color: rgb(224, 155, 26);
+    background-image: url("https://image.shutterstock.com/z/stock-vector-burger-pattern-on-orange-background-seamless-pattern-with-burgers-on-orange-background-vector-404394001.jpg");
 }
 
 .header {
-    color: whitesmoke;
+    color: #495057;;
+    font-size: 100px;
+
 }
 
-#create-form {
-    border: dotted white 5px;
-    color: white;
+
+
+#burg {
+    height: 60px;
+    width: 300px;
+    font-size: 14px;
+    text-align: center;
 }

@@ -40,31 +40,17 @@
 <div class="container" style="text-align: center;">
     <br><br>
 
-    <h1 class="header">Burgers!</h1>
+    <div class="bg-light p-5 rounded">
+        <h1 class="header"><i class="fas fa-hamburger"></i>Burgers!<i class="fas fa-hamburger"></i></h1>
+        <br><br>
+        <form id="create-form">
+            <div class="form-group">
+                <input type="text" id="burg" name="burger_name" placeholder="Add a Burger to the list!" required>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-lg btn-danger">Add Burger!</button>
+        </form>
 
-    <img src="https://i.pinimg.com/originals/01/1d/1d/011d1d429a11a56939f6b4c2831f1061.jpg" alt="burger"
-        style="height: 150px; width: 150px;">
-
-    <br><br>
-
-    <div class="container">
-        <div class="row align-items-start">
-            <h3 class="header">Add a Burger!</h3>
-            <form id="create-form">
-
-                <div class="form-group">
-                    <input type="text" id="burg" name="burger_name">
-                </div>
-
-                {{!-- <div class="form-group">
-                    <label for="devo">Devoured?</label><br>
-                    <input type="radio" name="devoured" value="1" id="devoured" checked> Devoured!<br>
-                    <input type="radio" name="devoured" value="0" id="not_devoured"> Not devoured!
-                </div> --}}
-
-                <button type="submit" class="">Add Burger</button>
-            </form>
-        </div>
     </div>
 
     <br><br><br><br>
@@ -73,7 +59,7 @@
         <div class="row align-items-start">
             <div class="col">
                 <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action list-group-item-dark"
+                    <button type="button" class="list-group-item list-group-item-action list-group-item-danger"
                         aria-current="true">
                         Click to Devour!
                     </button>
@@ -87,7 +73,7 @@
 
             <div class="col">
                 <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action list-group-item-dark"
+                    <button type="button" class="list-group-item list-group-item-action list-group-item-danger"
                         aria-current="true">
                         Click to Undevour!
                     </button>
